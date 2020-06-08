@@ -1,0 +1,35 @@
+* {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+@font-face {
+  font-family: GraublauWeb;
+  src: url("OPTIBodoni-Antiqua.otf") format("opentype");
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  padding: 48px;
+}
+
+/* 1.586 0.630517024 */
+#card {
+  background-color: white;
+  padding: 16px;
+  width: 100%;
+  max-width: 700px;
+  height: 441.361917px;
+  max-height: calc(0.630517024 * 100vw);
+  text-align: center;
+  border-radius: 2px;
+  font-size: 48px;
+  font-family: GraublauWeb;
+}

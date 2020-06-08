@@ -1,5 +1,5 @@
-{
-  "strategies": [
+module.exports = {
+  strategies: [
     "Remove specifics and convert to ambiguities",
     "Think of the radio",
     "Don't be frightened of clichés",
@@ -93,7 +93,7 @@
     "The tape is now the music",
     [
       "Short circuit",
-      "(example; a man eating peas with the idea that they will improve his virility shovels them straight into his lap)"
+      "(example; a man eating peas with the idea that they will improve his virility shovels them straight into his lap)",
     ],
     "Imagine the music as a moving chain or caterpillar",
     "Use an old idea",
@@ -129,7 +129,7 @@
       "Lowest common denominator check",
       "-single beat",
       "-single note",
-      "-single riff"
+      "-single riff",
     ],
     "Do the washing up",
     "Listen in total darkness, or in a very large room, very quietly",
@@ -141,6 +141,6 @@
     "Once the search is in progress, something will be found",
     "Only a part, not the whole",
     "From nothing to more than nothing",
-    "Be less critical more often"
-  ]
-}
+    "Be less critical more often",
+  ],
+};
