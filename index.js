@@ -152,13 +152,20 @@ const getRandomStrategy = () => {
 
 const assignStrategy = (strategy) => {
   const card = document.getElementById("cardText");
-  card.innerHTML = strategy;
+  if (typeof strategy === "string") card.innerHTML = strategy;
+  else if (Array.isArray(strategy)) {
+    strategy.forEach((line) => {
+      let div = document.createElement("div");
+      card.appendChild(div);
+      div.innerHTML = line;
+      if (line[0] === "-") div.classList.add("i");
+    });
+  }
 };
 
 const assignNewStrategy = () => {
   const strategy = getRandomStrategy();
   assignStrategy(strategy);
-  console.log(strategy);
   const now = new Date();
   localStorage.setItem("strategy", strategy);
   localStorage.setItem("timestamp", now.toISOString());
@@ -168,7 +175,7 @@ window.onload = () => {
   const now = new Date();
   const { strategy, timestamp } = localStorage;
   if (strategy && timestamp && +now < +new Date(timestamp) + 8 * hour) {
-    assignStrategy(strategy);
+    assignStrategy(strategy.includes("-") ? strategy.split(",") : strategy);
   } else {
     assignNewStrategy();
   }
