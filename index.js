@@ -167,7 +167,10 @@ const assignNewStrategy = () => {
   const strategy = getRandomStrategy();
   assignStrategy(strategy);
   const now = new Date();
-  localStorage.setItem("strategy", JSON.stringify(strategy));
+  localStorage.setItem(
+    "strategy",
+    Array.isArray(strategy) ? JSON.stringify(strategy) : strategy
+  );
   localStorage.setItem("timestamp", now.toISOString());
 };
 
