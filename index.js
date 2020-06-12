@@ -167,10 +167,7 @@ const assignNewStrategy = () => {
   const strategy = getRandomStrategy();
   assignStrategy(strategy);
   const now = new Date();
-  localStorage.setItem(
-    "strategy",
-    Array.isArray(strategy) ? JSON.stringify(strategy) : strategy
-  );
+  localStorage.setItem("strategy", JSON.stringify({ strategy }));
   localStorage.setItem("timestamp", now.toISOString());
 };
 
@@ -178,7 +175,7 @@ window.onload = () => {
   const now = new Date();
   const { strategy, timestamp } = localStorage;
   if (strategy && timestamp && +now < +new Date(timestamp) + 8 * hour) {
-    assignStrategy(JSON.parse(strategy));
+    assignStrategy(JSON.parse(strategy).strategy);
   } else {
     assignNewStrategy();
   }
